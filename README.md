@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# game-heaven
+
+여러 웹 게임을 담는 개인 게임 플랫폼. 새 게임을 계속 추가할 예정이라 "게임 추가가 쉬운 구조"를 목표로 만들었습니다. 첫 게임은 [2048](https://play2048.co/)입니다.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 스크립트
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev        # 개발 서버
+npm run build       # 프로덕션 빌드
+npm start           # 빌드 결과 실행
+npm run lint         # eslint
+npm test            # vitest run (게임 로직 단위 테스트)
+npm run test:watch  # vitest watch 모드
+```
 
-## Learn More
+## 구조
 
-To learn more about Next.js, take a look at the following resources:
+- 게임은 `src/games/<게임id>/` 폴더에 독립 모듈로 존재하며 `src/games/registry.ts`에 등록됩니다. 새 게임 추가 = 폴더 하나 + 레지스트리 한 줄.
+- 게임 로직은 React와 무관한 순수 함수로 작성하고 Vitest로 단위 테스트합니다 (예: `src/games/2048/logic.ts` / `logic.test.ts`).
+- 점수·진행 상태는 `src/lib/storage.ts`를 통해 localStorage에 저장합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+자세한 설계는 [`docs/superpowers/specs/2026-08-13-game-heaven-design.md`](docs/superpowers/specs/2026-08-13-game-heaven-design.md)를 참고하세요.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 기술 스택
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js (App Router) · TypeScript · Tailwind CSS · Vitest
