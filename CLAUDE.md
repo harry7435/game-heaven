@@ -7,13 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev                              # 개발 서버 (http://localhost:3000)
-npm run build                            # 프로덕션 빌드
-npm run lint                             # eslint
-npm test                                 # vitest run — 전체 테스트 1회 실행
-npm run test:watch                       # vitest watch 모드
-npx vitest run src/games/2048/logic.test.ts   # 단일 파일 테스트
-npx vitest run -t "테스트 이름"               # 이름으로 단일 테스트 실행
+pnpm dev                                  # 개발 서버 (http://localhost:3000)
+pnpm build                                # 프로덕션 빌드
+pnpm lint                                 # eslint
+pnpm test                                 # vitest run — 전체 테스트 1회 실행
+pnpm test:watch                           # vitest watch 모드
+pnpm vitest run src/games/2048/logic.test.ts   # 단일 파일 테스트
+pnpm vitest run -t "테스트 이름"               # 이름으로 단일 테스트 실행
 ```
 
 ## 아키텍처

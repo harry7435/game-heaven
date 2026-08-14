@@ -5,8 +5,8 @@
 ## Getting Started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 [http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
@@ -14,12 +14,12 @@ npm run dev
 ## 스크립트
 
 ```bash
-npm run dev        # 개발 서버
-npm run build       # 프로덕션 빌드
-npm start           # 빌드 결과 실행
-npm run lint         # eslint
-npm test            # vitest run (게임 로직 단위 테스트)
-npm run test:watch  # vitest watch 모드
+pnpm dev            # 개발 서버
+pnpm build          # 프로덕션 빌드
+pnpm start          # 빌드 결과 실행
+pnpm lint           # eslint
+pnpm test           # vitest run (게임 로직 단위 테스트)
+pnpm test:watch     # vitest watch 모드
 ```
 
 ## 구조
