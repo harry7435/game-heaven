@@ -29,3 +29,7 @@ pnpm vitest run -t "테스트 이름"               # 이름으로 단일 테스
 **경로 별칭.** `@/*`는 `src/*`로 매핑된다 (`tsconfig.json`).
 
 설계 배경은 `docs/superpowers/specs/2026-08-13-game-heaven-design.md`에 있다. 현재는 1단계(로컬 전용, localStorage)만 구현되어 있고, Firebase Auth/Firestore 연동은 2단계로 의도적으로 미뤄둔 상태다.
+
+## 커밋 컨벤션
+
+이 저장소의 커밋에는 `Co-Authored-By` 트레일러를 추가하지 않는다.
